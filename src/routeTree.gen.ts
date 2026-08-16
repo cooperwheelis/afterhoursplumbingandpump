@@ -10,33 +10,170 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas.index'
+import { Route as ServiceAreasDurhamNcRouteImport } from './routes/service-areas.durham-nc'
+import { Route as ServiceAreasHillsboroughNcRouteImport } from './routes/service-areas.hillsborough-nc'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesPlumbingRepairsAndEmergenciesRouteImport } from './routes/services.plumbing-repairs-and-emergencies'
+import { Route as ServicesWaterHeatersRouteImport } from './routes/services.water-heaters'
+import { Route as ServicesWellPumpsAndWaterQualityRouteImport } from './routes/services.well-pumps-and-water-quality'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
+  id: '/service-areas/',
+  path: '/service-areas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasDurhamNcRoute = ServiceAreasDurhamNcRouteImport.update({
+  id: '/service-areas/durham-nc',
+  path: '/service-areas/durham-nc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasHillsboroughNcRoute =
+  ServiceAreasHillsboroughNcRouteImport.update({
+    id: '/service-areas/hillsborough-nc',
+    path: '/service-areas/hillsborough-nc',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesPlumbingRepairsAndEmergenciesRoute =
+  ServicesPlumbingRepairsAndEmergenciesRouteImport.update({
+    id: '/services/plumbing-repairs-and-emergencies',
+    path: '/services/plumbing-repairs-and-emergencies',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesWaterHeatersRoute = ServicesWaterHeatersRouteImport.update({
+  id: '/services/water-heaters',
+  path: '/services/water-heaters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWellPumpsAndWaterQualityRoute =
+  ServicesWellPumpsAndWaterQualityRouteImport.update({
+    id: '/services/well-pumps-and-water-quality',
+    path: '/services/well-pumps-and-water-quality',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/service-areas/durham-nc': typeof ServiceAreasDurhamNcRoute
+  '/service-areas/hillsborough-nc': typeof ServiceAreasHillsboroughNcRoute
+  '/services/plumbing-repairs-and-emergencies': typeof ServicesPlumbingRepairsAndEmergenciesRoute
+  '/services/water-heaters': typeof ServicesWaterHeatersRoute
+  '/services/well-pumps-and-water-quality': typeof ServicesWellPumpsAndWaterQualityRoute
+  '/service-areas/': typeof ServiceAreasIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/service-areas/durham-nc': typeof ServiceAreasDurhamNcRoute
+  '/service-areas/hillsborough-nc': typeof ServiceAreasHillsboroughNcRoute
+  '/services/plumbing-repairs-and-emergencies': typeof ServicesPlumbingRepairsAndEmergenciesRoute
+  '/services/water-heaters': typeof ServicesWaterHeatersRoute
+  '/services/well-pumps-and-water-quality': typeof ServicesWellPumpsAndWaterQualityRoute
+  '/service-areas': typeof ServiceAreasIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/service-areas/durham-nc': typeof ServiceAreasDurhamNcRoute
+  '/service-areas/hillsborough-nc': typeof ServiceAreasHillsboroughNcRoute
+  '/services/plumbing-repairs-and-emergencies': typeof ServicesPlumbingRepairsAndEmergenciesRoute
+  '/services/water-heaters': typeof ServicesWaterHeatersRoute
+  '/services/well-pumps-and-water-quality': typeof ServicesWellPumpsAndWaterQualityRoute
+  '/service-areas/': typeof ServiceAreasIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/service-areas/durham-nc'
+    | '/service-areas/hillsborough-nc'
+    | '/services/plumbing-repairs-and-emergencies'
+    | '/services/water-heaters'
+    | '/services/well-pumps-and-water-quality'
+    | '/service-areas/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/service-areas/durham-nc'
+    | '/service-areas/hillsborough-nc'
+    | '/services/plumbing-repairs-and-emergencies'
+    | '/services/water-heaters'
+    | '/services/well-pumps-and-water-quality'
+    | '/service-areas'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/service-areas/durham-nc'
+    | '/service-areas/hillsborough-nc'
+    | '/services/plumbing-repairs-and-emergencies'
+    | '/services/water-heaters'
+    | '/services/well-pumps-and-water-quality'
+    | '/service-areas/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ServiceAreasDurhamNcRoute: typeof ServiceAreasDurhamNcRoute
+  ServiceAreasHillsboroughNcRoute: typeof ServiceAreasHillsboroughNcRoute
+  ServicesPlumbingRepairsAndEmergenciesRoute: typeof ServicesPlumbingRepairsAndEmergenciesRoute
+  ServicesWaterHeatersRoute: typeof ServicesWaterHeatersRoute
+  ServicesWellPumpsAndWaterQualityRoute: typeof ServicesWellPumpsAndWaterQualityRoute
+  ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +185,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/': {
+      id: '/service-areas/'
+      path: '/service-areas'
+      fullPath: '/service-areas/'
+      preLoaderRoute: typeof ServiceAreasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/durham-nc': {
+      id: '/service-areas/durham-nc'
+      path: '/service-areas/durham-nc'
+      fullPath: '/service-areas/durham-nc'
+      preLoaderRoute: typeof ServiceAreasDurhamNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/hillsborough-nc': {
+      id: '/service-areas/hillsborough-nc'
+      path: '/service-areas/hillsborough-nc'
+      fullPath: '/service-areas/hillsborough-nc'
+      preLoaderRoute: typeof ServiceAreasHillsboroughNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/plumbing-repairs-and-emergencies': {
+      id: '/services/plumbing-repairs-and-emergencies'
+      path: '/services/plumbing-repairs-and-emergencies'
+      fullPath: '/services/plumbing-repairs-and-emergencies'
+      preLoaderRoute: typeof ServicesPlumbingRepairsAndEmergenciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/water-heaters': {
+      id: '/services/water-heaters'
+      path: '/services/water-heaters'
+      fullPath: '/services/water-heaters'
+      preLoaderRoute: typeof ServicesWaterHeatersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/well-pumps-and-water-quality': {
+      id: '/services/well-pumps-and-water-quality'
+      path: '/services/well-pumps-and-water-quality'
+      fullPath: '/services/well-pumps-and-water-quality'
+      preLoaderRoute: typeof ServicesWellPumpsAndWaterQualityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ServiceAreasDurhamNcRoute: ServiceAreasDurhamNcRoute,
+  ServiceAreasHillsboroughNcRoute: ServiceAreasHillsboroughNcRoute,
+  ServicesPlumbingRepairsAndEmergenciesRoute:
+    ServicesPlumbingRepairsAndEmergenciesRoute,
+  ServicesWaterHeatersRoute: ServicesWaterHeatersRoute,
+  ServicesWellPumpsAndWaterQualityRoute: ServicesWellPumpsAndWaterQualityRoute,
+  ServiceAreasIndexRoute: ServiceAreasIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
