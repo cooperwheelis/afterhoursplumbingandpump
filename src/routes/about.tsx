@@ -104,12 +104,12 @@ function AboutPage() {
           <Reveal>
             <img
               src={dougPhoto}
-              alt="Doug Jones, owner of After Hours Plumbing and Pump Service"
+              alt="After Hours Plumbing technician installing a residential water heater"
               loading="lazy"
               decoding="async"
               className="aspect-[4/5] w-full object-cover"
             />
-            <p className="mt-3 text-sm text-muted-foreground">Doug Jones, owner</p>
+            <p className="mt-3 text-sm text-muted-foreground">On the job in Orange County, NC</p>
           </Reveal>
         </div>
       </Section>
