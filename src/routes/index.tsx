@@ -238,7 +238,7 @@ function Home() {
             intro="We are based in Hillsborough, and Durham is our second home market. We also travel to the towns around us."
           />
         </Reveal>
-        <ul className="mt-8 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3">
           {CITIES.map((city) => (
             <li key={city.name} className="bg-surface">
               {"to" in city && city.to ? (
@@ -247,7 +247,7 @@ function Home() {
                   className="flex min-h-16 items-center justify-between gap-2 p-4 font-semibold text-navy hover:bg-muted hover:text-blue"
                 >
                   {city.name}
-                  <span className="bg-amber px-2 py-0.5 text-[11px] font-bold tracking-wide text-amber-foreground uppercase">
+                  <span className="rounded-sm bg-amber px-2 py-0.5 text-[11px] font-bold tracking-wide text-amber-foreground uppercase">
                     Primary
                   </span>
                 </Link>
