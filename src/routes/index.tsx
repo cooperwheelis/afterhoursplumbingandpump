@@ -114,7 +114,7 @@ function Home() {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4">
           {serviceBlocks.map((block) => (
             <Reveal key={block.title}>
-              <article className="group h-full border border-border bg-surface">
+              <article className="group h-full overflow-hidden rounded-md border border-border bg-surface">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={block.image}
@@ -193,7 +193,7 @@ function Home() {
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {REVIEWS.slice(0, 3).map((review) => (
             <Reveal key={review.id}>
-              <figure className="h-full border-t-2 border-blue bg-surface p-6">
+              <figure className="h-full rounded-md border-t-2 border-blue bg-surface p-6">
                 <blockquote className="leading-relaxed text-foreground">{review.quote}</blockquote>
                 <figcaption className="mt-4 text-sm font-semibold text-muted-foreground">
                   {review.name} — {review.city}
@@ -219,7 +219,7 @@ function Home() {
               alt={img.alt}
               loading="lazy"
               decoding="async"
-              className="aspect-square w-full object-cover"
+              className="aspect-square w-full rounded-md object-cover"
             />
           ))}
         </div>
