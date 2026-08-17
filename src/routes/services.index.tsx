@@ -136,7 +136,7 @@ function ServicesPage() {
                 alt={group.alt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-[4/3] w-full rounded-md object-cover"
               />
             </Reveal>
             <Reveal>

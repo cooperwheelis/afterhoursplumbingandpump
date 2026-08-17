@@ -63,7 +63,7 @@ function ServiceAreasPage() {
         </Reveal>
 
         <h3 className="mt-10 text-sm font-bold tracking-[0.14em] text-muted-foreground uppercase">Primary markets</h3>
-        <div className="mt-4 grid gap-px border border-border bg-border sm:grid-cols-2">
+        <div className="mt-4 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
           {CITIES.filter((c) => c.primary).map((city) => (
             <Link
               key={city.name}
@@ -86,7 +86,7 @@ function ServiceAreasPage() {
         <h3 className="mt-10 text-sm font-bold tracking-[0.14em] text-muted-foreground uppercase">
           Also serving these towns
         </h3>
-        <ul className="mt-4 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
+        <ul className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-4">
           {CITIES.filter((c) => !c.primary).map((city) => (
             <li key={city.name} className="flex min-h-16 items-center bg-surface p-4 font-semibold text-foreground">
               {city.name}, NC
