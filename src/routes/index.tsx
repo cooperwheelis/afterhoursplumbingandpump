@@ -91,17 +91,11 @@ function Home() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy/85 to-navy/45"
         />
-        <div className="container-page relative flex min-h-[500px] flex-col justify-center py-14 sm:min-h-[540px] lg:min-h-[620px]">
+        <div className="container-page relative flex min-h-[420px] flex-col justify-center py-14 sm:min-h-[460px] lg:min-h-[520px]">
           <div className="max-w-[500px] text-navy-foreground">
-            <p className="text-xs font-semibold tracking-[0.2em] text-amber uppercase">
-              Hillsborough • Durham • Triangle Area
-            </p>
-            <h1 className="mt-4 text-[2.5rem] leading-[1.05] font-extrabold sm:text-5xl lg:text-[3.85rem]">
+            <h1 className="text-[2.5rem] leading-[1.05] font-extrabold sm:text-5xl lg:text-[3.85rem]">
               Plumbing help. Day or night.
             </h1>
-            <p className="mt-4 text-lg text-navy-foreground/90">
-              Local, licensed plumbing service available 24/7.
-            </p>
             <div className="mt-7">
               <CallButton className="w-full sm:w-auto" />
               <p className="mt-3 text-sm text-navy-foreground/75">No overtime or weekend premiums.</p>
