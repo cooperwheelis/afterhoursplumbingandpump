@@ -16,7 +16,7 @@ export function PageHero({
   showCall?: boolean;
 }) {
   return (
-    <section className="relative isolate min-h-[300px] overflow-hidden bg-navy sm:min-h-[340px]">
+    <section className="relative isolate min-h-[240px] overflow-hidden bg-navy sm:min-h-[280px]">
       <img
         src={image}
         alt={imageAlt}
@@ -28,7 +28,7 @@ export function PageHero({
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy/85 to-navy/55"
       />
-      <div className="container-page relative flex min-h-[300px] flex-col justify-center py-12 sm:min-h-[340px] sm:py-16">
+      <div className="container-page relative flex min-h-[240px] flex-col justify-center py-12 sm:min-h-[280px] sm:py-16">
         <div className="max-w-[560px] text-navy-foreground">
           {eyebrow ? (
             <p className="text-xs font-semibold tracking-[0.18em] text-amber uppercase">{eyebrow}</p>

@@ -20,7 +20,7 @@ export function CallButton({ label, variant = "amber", size = "lg", className }:
     <a
       href={PHONE_HREF}
       className={cn(
-        "inline-flex min-h-11 items-center justify-center gap-2 rounded-none font-semibold transition-colors",
+        "inline-flex min-h-11 items-center justify-center gap-2 rounded-md font-semibold transition-colors",
         size === "lg" ? "px-6 py-3.5 text-base sm:text-lg" : "px-4 py-2.5 text-sm",
         styles,
         className,
