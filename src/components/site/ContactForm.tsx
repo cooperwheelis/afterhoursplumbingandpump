@@ -35,7 +35,7 @@ const SERVICE_OPTIONS = [
 ];
 
 const fieldClass =
-  "mt-1.5 w-full rounded-none border border-input bg-surface px-3 py-2.5 text-base text-foreground outline-none focus:border-blue";
+  "mt-1.5 w-full rounded-md border border-input bg-surface px-3 py-2.5 text-base text-foreground outline-none focus:border-blue";
 
 export function ContactForm({ heading = "Send a non-emergency message" }: { heading?: string }) {
   const [submitted, setSubmitted] = useState(false);
@@ -64,7 +64,7 @@ export function ContactForm({ heading = "Send a non-emergency message" }: { head
 
   if (submitted) {
     return (
-      <div role="status" className="border-l-2 border-blue bg-surface p-6">
+      <div role="status" className="rounded-md border-l-2 border-blue bg-surface p-6">
         <h2 className="flex items-center gap-2 text-xl font-bold text-navy">
           <CheckCircle2 aria-hidden="true" className="size-6 text-blue" />
           Message received
@@ -82,9 +82,9 @@ export function ContactForm({ heading = "Send a non-emergency message" }: { head
   }
 
   return (
-    <div className="border border-border bg-surface p-6">
+    <div className="rounded-md border border-border bg-surface p-6">
       <h2 className="text-xl font-bold text-navy">{heading}</h2>
-      <p className="mt-3 border-l-2 border-amber bg-muted p-3 text-sm font-semibold text-foreground">
+      <p className="mt-3 rounded-md border-l-2 border-amber bg-muted p-3 text-sm font-semibold text-foreground">
         For emergencies, call{" "}
         <a href={PHONE_HREF} className="text-blue underline underline-offset-4">
           {PHONE_DISPLAY}
@@ -189,7 +189,7 @@ export function ContactForm({ heading = "Send a non-emergency message" }: { head
         </div>
 
         {serverError ? (
-          <p role="alert" className="border-l-2 border-destructive bg-muted p-3 text-sm font-medium text-destructive">
+          <p role="alert" className="rounded-md border-l-2 border-destructive bg-muted p-3 text-sm font-medium text-destructive">
             {serverError}
           </p>
         ) : null}
@@ -197,7 +197,7 @@ export function ContactForm({ heading = "Send a non-emergency message" }: { head
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex min-h-12 items-center justify-center bg-navy px-6 font-bold text-navy-foreground transition-colors hover:bg-navy-deep disabled:opacity-70"
+          className="inline-flex min-h-12 items-center justify-center rounded-md bg-navy px-6 font-bold text-navy-foreground transition-colors hover:bg-navy-deep disabled:opacity-70"
         >
           {isSubmitting ? "Sending…" : "Send message"}
         </button>

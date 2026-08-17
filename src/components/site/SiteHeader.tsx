@@ -55,7 +55,7 @@ function DesktopDropdown({
       </button>
       <div
         className={cn(
-          "absolute top-full left-0 z-50 w-72 border border-border bg-surface shadow-sm transition-opacity duration-150",
+          "absolute top-full left-0 z-50 w-72 rounded-md border border-border bg-surface shadow-sm transition-opacity duration-150",
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
@@ -117,7 +117,7 @@ export function SiteHeader() {
             </Link>
             <a
               href={PHONE_HREF}
-              className="inline-flex min-h-11 items-center gap-2 bg-amber px-5 py-2.5 text-[15px] font-bold text-amber-foreground transition-colors hover:bg-amber-hover"
+              className="inline-flex min-h-11 items-center gap-2 rounded-md bg-amber px-5 py-2.5 text-[15px] font-bold text-amber-foreground transition-colors hover:bg-amber-hover"
             >
               <Phone aria-hidden="true" className="size-4" />
               Call 24/7
@@ -127,7 +127,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href={PHONE_HREF}
-              className="inline-flex min-h-11 items-center gap-2 bg-amber px-4 py-2 text-sm font-bold text-amber-foreground"
+              className="inline-flex min-h-11 items-center gap-2 rounded-md bg-amber px-4 py-2 text-sm font-bold text-amber-foreground"
             >
               <Phone aria-hidden="true" className="size-4" />
               Call 24/7
@@ -138,7 +138,7 @@ export function SiteHeader() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              className="grid size-11 place-items-center border border-input text-navy"
+              className="grid size-11 place-items-center rounded-md border border-input text-navy"
             >
               {mobileOpen ? <X aria-hidden="true" className="size-6" /> : <Menu aria-hidden="true" className="size-6" />}
             </button>
@@ -166,7 +166,7 @@ export function SiteHeader() {
               </Link>
               <a
                 href={PHONE_HREF}
-                className="mt-4 flex min-h-12 items-center justify-center gap-2 bg-amber px-4 font-bold text-amber-foreground"
+                className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-md bg-amber px-4 font-bold text-amber-foreground"
               >
                 <Phone aria-hidden="true" className="size-5" />
                 Call {PHONE_DISPLAY}

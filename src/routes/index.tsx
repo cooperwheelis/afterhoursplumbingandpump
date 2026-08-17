@@ -91,17 +91,11 @@ function Home() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy/85 to-navy/45"
         />
-        <div className="container-page relative flex min-h-[500px] flex-col justify-center py-14 sm:min-h-[540px] lg:min-h-[620px]">
+        <div className="container-page relative flex min-h-[420px] flex-col justify-center py-14 sm:min-h-[460px] lg:min-h-[520px]">
           <div className="max-w-[500px] text-navy-foreground">
-            <p className="text-xs font-semibold tracking-[0.2em] text-amber uppercase">
-              Hillsborough • Durham • Triangle Area
-            </p>
-            <h1 className="mt-4 text-[2.5rem] leading-[1.05] font-extrabold sm:text-5xl lg:text-[3.85rem]">
+            <h1 className="text-[2.5rem] leading-[1.05] font-extrabold sm:text-5xl lg:text-[3.85rem]">
               Plumbing help. Day or night.
             </h1>
-            <p className="mt-4 text-lg text-navy-foreground/90">
-              Local, licensed plumbing service available 24/7.
-            </p>
             <div className="mt-7">
               <CallButton className="w-full sm:w-auto" />
               <p className="mt-3 text-sm text-navy-foreground/75">No overtime or weekend premiums.</p>
@@ -120,7 +114,7 @@ function Home() {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4">
           {serviceBlocks.map((block) => (
             <Reveal key={block.title}>
-              <article className="group h-full border border-border bg-surface">
+              <article className="group h-full overflow-hidden rounded-md border border-border bg-surface">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={block.image}
@@ -199,7 +193,7 @@ function Home() {
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {REVIEWS.slice(0, 3).map((review) => (
             <Reveal key={review.id}>
-              <figure className="h-full border-t-2 border-blue bg-surface p-6">
+              <figure className="h-full rounded-md border-t-2 border-blue bg-surface p-6">
                 <blockquote className="leading-relaxed text-foreground">{review.quote}</blockquote>
                 <figcaption className="mt-4 text-sm font-semibold text-muted-foreground">
                   {review.name} — {review.city}
@@ -225,7 +219,7 @@ function Home() {
               alt={img.alt}
               loading="lazy"
               decoding="async"
-              className="aspect-square w-full object-cover"
+              className="aspect-square w-full rounded-md object-cover"
             />
           ))}
         </div>
@@ -244,7 +238,7 @@ function Home() {
             intro="We are based in Hillsborough, and Durham is our second home market. We also travel to the towns around us."
           />
         </Reveal>
-        <ul className="mt-8 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3">
           {CITIES.map((city) => (
             <li key={city.name} className="bg-surface">
               {"to" in city && city.to ? (
@@ -253,7 +247,7 @@ function Home() {
                   className="flex min-h-16 items-center justify-between gap-2 p-4 font-semibold text-navy hover:bg-muted hover:text-blue"
                 >
                   {city.name}
-                  <span className="bg-amber px-2 py-0.5 text-[11px] font-bold tracking-wide text-amber-foreground uppercase">
+                  <span className="rounded-sm bg-amber px-2 py-0.5 text-[11px] font-bold tracking-wide text-amber-foreground uppercase">
                     Primary
                   </span>
                 </Link>

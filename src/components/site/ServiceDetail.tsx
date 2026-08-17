@@ -66,9 +66,9 @@ export function ServiceDetail(props: ServiceDetailProps) {
               alt={props.supportAlt}
               loading="lazy"
               decoding="async"
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[4/5] w-full rounded-md object-cover"
             />
-            <div className="mt-6 border border-border bg-surface p-6">
+            <div className="mt-6 rounded-md border border-border bg-surface p-6">
               <h2 className="text-xl font-bold text-navy">Why customers choose After Hours</h2>
               <ul className="mt-4 space-y-2">
                 {props.whyUs.map((item) => (

@@ -63,7 +63,7 @@ function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
           <Reveal>
             <h2 className="text-2xl font-bold sm:text-3xl">Contact details</h2>
-            <dl className="mt-6 divide-y divide-border border-y border-border">
+            <dl className="mt-6 divide-y divide-border rounded-md border border-border">
               <div className="flex items-start gap-3 py-5">
                 <Phone aria-hidden="true" className="mt-1 size-5 shrink-0 text-amber" />
                 <div>

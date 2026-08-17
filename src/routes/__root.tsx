@@ -26,7 +26,7 @@ function NotFoundComponent() {
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
-          <Link to="/" className="inline-flex min-h-11 items-center bg-navy px-5 py-3 font-semibold text-navy-foreground">
+          <Link to="/" className="inline-flex min-h-11 items-center rounded-md bg-navy px-5 py-3 font-semibold text-navy-foreground">
             Go home
           </Link>
         </div>
@@ -56,11 +56,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex min-h-11 items-center bg-navy px-5 py-3 text-sm font-semibold text-navy-foreground"
+            className="inline-flex min-h-11 items-center rounded-md bg-navy px-5 py-3 text-sm font-semibold text-navy-foreground"
           >
             Try again
           </button>
-          <a href="/" className="inline-flex min-h-11 items-center border border-input px-5 py-3 text-sm font-semibold">
+          <a href="/" className="inline-flex min-h-11 items-center rounded-md border border-input px-5 py-3 text-sm font-semibold">
             Go home
           </a>
         </div>

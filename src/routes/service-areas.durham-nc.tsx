@@ -103,7 +103,7 @@ export function Page() {
               alt="Completed plumbing repair on a Durham area property"
               loading="lazy"
               decoding="async"
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[4/5] w-full rounded-md object-cover"
             />
           </Reveal>
         </div>

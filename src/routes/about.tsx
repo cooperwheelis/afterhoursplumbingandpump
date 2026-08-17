@@ -107,7 +107,7 @@ function AboutPage() {
               alt="After Hours Plumbing technician installing a residential water heater"
               loading="lazy"
               decoding="async"
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[4/5] w-full rounded-md object-cover"
             />
             <p className="mt-3 text-sm text-muted-foreground">On the job in Orange County, NC</p>
           </Reveal>
@@ -118,7 +118,7 @@ function AboutPage() {
         <Reveal>
           <SectionHeading title="How we work" intro="Four things we do not compromise on, on every call." />
         </Reveal>
-        <div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
+        <div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
           {values.map((value) => (
             <div key={value.heading} className="bg-surface p-6">
               <div className="flex items-start gap-3">
@@ -149,7 +149,7 @@ function AboutPage() {
               alt={photo.alt}
               loading="lazy"
               decoding="async"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3] w-full rounded-md object-cover"
             />
           ))}
         </div>
