@@ -105,7 +105,7 @@ export function Page() {
               alt="Well water system serviced at a home outside Hillsborough"
               loading="lazy"
               decoding="async"
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[4/5] w-full rounded-md object-cover"
             />
           </Reveal>
         </div>
