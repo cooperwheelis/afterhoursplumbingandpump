@@ -1,9 +1,7 @@
 import { CallButton } from "./CallButton";
 
 export function PageHero({
-  eyebrow,
   title,
-  intro,
   image,
   imageAlt,
   showCall = true,
@@ -30,11 +28,7 @@ export function PageHero({
       />
       <div className="container-page relative flex min-h-[240px] flex-col justify-center py-12 sm:min-h-[280px] sm:py-16">
         <div className="max-w-[560px] text-navy-foreground">
-          {eyebrow ? (
-            <p className="text-xs font-semibold tracking-[0.18em] text-amber uppercase">{eyebrow}</p>
-          ) : null}
-          <h1 className="mt-3 text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl">{title}</h1>
-          {intro ? <p className="mt-4 text-base leading-relaxed text-navy-foreground/85">{intro}</p> : null}
+          <h1 className="text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl">{title}</h1>
           {showCall ? (
             <div className="mt-6">
               <CallButton />
