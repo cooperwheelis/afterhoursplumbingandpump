@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
 import { MobileCallBar } from "../components/site/MobileCallBar";
-import { EMAIL, PHONE_DISPLAY } from "../data/site";
+import { EMAIL, PHONE_DISPLAY, SOCIAL_LINKS } from "../data/site";
 
 function NotFoundComponent() {
   return (
@@ -87,6 +87,7 @@ const localBusinessSchema = {
     postalCode: "27278",
     addressCountry: "US",
   },
+  sameAs: SOCIAL_LINKS.map((s) => s.href),
   areaServed: [
     "Hillsborough, NC",
     "Durham, NC",
