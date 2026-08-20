@@ -87,6 +87,7 @@ const localBusinessSchema = {
     postalCode: "27278",
     addressCountry: "US",
   },
+  sameAs: SOCIAL_LINKS.map((s) => s.href),
   areaServed: [
     "Hillsborough, NC",
     "Durham, NC",
