@@ -14,7 +14,16 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
 import { MobileCallBar } from "../components/site/MobileCallBar";
-import { EMAIL, PHONE_DISPLAY, SOCIAL_LINKS } from "../data/site";
+import {
+  EMAIL,
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  OG_IMAGE,
+  PHONE_DISPLAY,
+  SITE_URL,
+  SOCIAL_LINKS,
+  STREET_ADDRESS,
+} from "../data/site";
 
 function NotFoundComponent() {
   return (
@@ -75,13 +84,22 @@ const localBusinessSchema = {
   name: "After Hours Plumbing and Pump Service",
   description:
     "Locally owned plumbing and well pump company in Hillsborough, NC offering 24/7 emergency service for homes and businesses across Durham and the Triangle.",
+  url: SITE_URL,
+  image: OG_IMAGE,
+  logo: OG_IMAGE,
   telephone: "+1-919-732-7588",
   email: EMAIL,
   founder: { "@type": "Person", name: "Doug Jones" },
   foundingDate: "2009-03",
+  priceRange: "$$",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: GOOGLE_RATING,
+    reviewCount: GOOGLE_REVIEW_COUNT,
+  },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "P.O. Box 296",
+    streetAddress: STREET_ADDRESS,
     addressLocality: "Hillsborough",
     addressRegion: "NC",
     postalCode: "27278",

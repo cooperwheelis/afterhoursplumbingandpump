@@ -5,7 +5,7 @@ import { FinalCta } from "@/components/site/FinalCta";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { Section, SectionHeading } from "@/components/site/Section";
-import { CITIES, MAPS_LINK, PHONE_DISPLAY } from "@/data/site";
+import { CITIES, MAPS_LINK, OG_IMAGE, PHONE_DISPLAY, SITE_URL } from "@/data/site";
 
 export const Route = createFileRoute("/service-areas/")({
   head: () => ({
@@ -21,10 +21,12 @@ export const Route = createFileRoute("/service-areas/")({
         property: "og:description",
         content: "Local plumbing across the Triangle, based in Hillsborough, NC. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/service-areas" },
+      { property: "og:url", content: SITE_URL + "/service-areas" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/service-areas" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/service-areas" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -32,8 +34,8 @@ export const Route = createFileRoute("/service-areas/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Service Areas", item: "/service-areas" },
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+            { "@type": "ListItem", position: 2, name: "Service Areas", item: SITE_URL + "/service-areas" },
           ],
         }),
       },
@@ -67,7 +69,7 @@ function ServiceAreasPage() {
           {CITIES.filter((c) => c.primary).map((city) => (
             <Link
               key={city.name}
-              to={city.to!}
+              to={city.to}
               className="group bg-surface p-6 hover:bg-muted"
             >
               <h4 className="text-xl font-bold text-navy group-hover:text-blue">{city.name}, NC</h4>
@@ -88,8 +90,13 @@ function ServiceAreasPage() {
         </h3>
         <ul className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-4">
           {CITIES.filter((c) => !c.primary).map((city) => (
-            <li key={city.name} className="flex min-h-16 items-center bg-surface p-4 font-semibold text-foreground">
-              {city.name}, NC
+            <li key={city.name}>
+              <Link
+                to={city.to}
+                className="flex min-h-16 items-center bg-surface p-4 font-semibold text-foreground hover:bg-muted hover:text-blue"
+              >
+                {city.name}, NC
+              </Link>
             </li>
           ))}
         </ul>

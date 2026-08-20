@@ -1,6 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { AREA_LINKS, EMAIL, MAILING_ADDRESS, PHONE_DISPLAY, PHONE_HREF, SERVICE_LINKS, SOCIAL_LINKS } from "@/data/site";
+import {
+  AREA_LINKS,
+  CITY_STATE_ZIP,
+  EMAIL,
+  MAILING_ADDRESS,
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  SERVICE_LINKS,
+  SOCIAL_LINKS,
+  STREET_ADDRESS,
+} from "@/data/site";
 import { Logo } from "./Logo";
 
 export function SiteFooter() {
@@ -25,7 +35,13 @@ export function SiteFooter() {
             </li>
             <li className="flex items-start gap-2 text-navy-foreground/80">
               <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-              {MAILING_ADDRESS}
+              <span>
+                {STREET_ADDRESS}
+                <br />
+                {CITY_STATE_ZIP}
+                <br />
+                <span className="text-navy-foreground/60">Mail: {MAILING_ADDRESS}</span>
+              </span>
             </li>
           </ul>
         </div>
@@ -62,6 +78,11 @@ export function SiteFooter() {
             <li>
               <Link to="/about" className="inline-flex min-h-9 items-center hover:text-amber hover:underline">
                 About
+              </Link>
+            </li>
+            <li>
+              <Link to="/reviews" className="inline-flex min-h-9 items-center hover:text-amber hover:underline">
+                Reviews
               </Link>
             </li>
             <li>

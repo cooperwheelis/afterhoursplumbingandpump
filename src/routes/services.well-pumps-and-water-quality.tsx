@@ -1,3 +1,4 @@
+import { OG_IMAGE, SITE_URL } from "@/data/site";
 import { createFileRoute } from "@tanstack/react-router";
 import heroPhoto from "@/assets/work-pump-install.webp";
 import supportPhoto from "@/assets/work-well-system.webp";
@@ -19,10 +20,12 @@ export const Route = createFileRoute("/services/well-pumps-and-water-quality")({
         property: "og:description",
         content: "Lost water or low pressure? Well pump, pressure tank and water treatment service. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/services/well-pumps-and-water-quality" },
+      { property: "og:url", content: SITE_URL + "/services/well-pumps-and-water-quality" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/services/well-pumps-and-water-quality" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/services/well-pumps-and-water-quality" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -39,13 +42,13 @@ export const Route = createFileRoute("/services/well-pumps-and-water-quality")({
             {
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-                { "@type": "ListItem", position: 2, name: "Services", item: "/services" },
+                { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+                { "@type": "ListItem", position: 2, name: "Services", item: SITE_URL + "/services" },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Well Pumps & Water Quality",
-                  item: "/services/well-pumps-and-water-quality",
+                  item: SITE_URL + "/services/well-pumps-and-water-quality",
                 },
               ],
             },

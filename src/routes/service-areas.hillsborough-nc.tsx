@@ -9,7 +9,7 @@ import { FinalCta } from "@/components/site/FinalCta";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { Section, SectionHeading } from "@/components/site/Section";
-import { SERVICE_LINKS } from "@/data/site";
+import { OG_IMAGE, SERVICE_LINKS, SITE_URL } from "@/data/site";
 
 const title = "Plumber in Hillsborough, NC | 24/7 Emergency Service";
 
@@ -27,10 +27,12 @@ export const Route = createFileRoute("/service-areas/hillsborough-nc")({
         property: "og:description",
         content: "Hillsborough's local plumbing and pump company. Call (919) 732-7588, any hour.",
       },
-      { property: "og:url", content: "/service-areas/hillsborough-nc" },
+      { property: "og:url", content: SITE_URL + "/service-areas/hillsborough-nc" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/service-areas/hillsborough-nc" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/service-areas/hillsborough-nc" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -38,9 +40,9 @@ export const Route = createFileRoute("/service-areas/hillsborough-nc")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Service Areas", item: "/service-areas" },
-            { "@type": "ListItem", position: 3, name: "Hillsborough, NC", item: "/service-areas/hillsborough-nc" },
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+            { "@type": "ListItem", position: 2, name: "Service Areas", item: SITE_URL + "/service-areas" },
+            { "@type": "ListItem", position: 3, name: "Hillsborough, NC", item: SITE_URL + "/service-areas/hillsborough-nc" },
           ],
         }),
       },
