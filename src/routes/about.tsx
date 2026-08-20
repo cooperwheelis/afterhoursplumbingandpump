@@ -1,3 +1,4 @@
+import { OG_IMAGE, SITE_URL } from "@/data/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import heroPhoto from "@/assets/after-hours-plumbing-team.webp";
@@ -28,10 +29,12 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Locally owned since 2009. Licensed, insured, and available 24/7 with no overtime charges.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: SITE_URL + "/about" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/about" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -39,8 +42,8 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "About", item: "/about" },
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+            { "@type": "ListItem", position: 2, name: "About", item: SITE_URL + "/about" },
           ],
         }),
       },

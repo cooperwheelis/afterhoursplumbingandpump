@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BadgeCheck, Clock, ShieldCheck, Wrench } from "lucide-react";
+import { BadgeCheck, Clock, ShieldCheck, Star, Wrench } from "lucide-react";
 import heroTeam from "@/assets/after-hours-plumbing-team.webp";
 import technicianPhoto from "@/assets/after-hours-technician-truck.webp";
 import repairPhoto from "@/assets/work-repair.webp";
@@ -12,8 +12,8 @@ import { CallButton } from "@/components/site/CallButton";
 import { FinalCta } from "@/components/site/FinalCta";
 import { Reveal } from "@/components/site/Reveal";
 import { Section, SectionHeading } from "@/components/site/Section";
-import { CITIES, MAPS_LINK, PHONE_DISPLAY } from "@/data/site";
-import { REVIEWS } from "@/data/reviews";
+import { CITIES, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, MAPS_LINK, OG_IMAGE, PHONE_DISPLAY, SITE_URL } from "@/data/site";
+import { publishedReviews } from "@/data/reviews";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,10 +30,12 @@ export const Route = createFileRoute("/")({
         content:
           "Local, licensed plumbing service available 24/7 in Hillsborough, Durham and the Triangle. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL + "/" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/" }],
   }),
   component: Home,
 });
@@ -77,6 +79,7 @@ const trustPoints = [
 ] as const;
 
 function Home() {
+  const homeReviews = publishedReviews().slice(0, 3);
   return (
     <>
       <section className="relative isolate overflow-hidden bg-navy">
@@ -189,19 +192,33 @@ function Home() {
       <Section tone="page">
         <Reveal>
           <SectionHeading title="Trusted in homes across the Triangle." />
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <span className="flex items-center gap-2 text-lg font-bold text-navy">
+              <Star aria-hidden="true" className="size-5 fill-amber text-amber" />
+              {GOOGLE_RATING} on Google · {GOOGLE_REVIEW_COUNT}+ reviews
+            </span>
+            <Link
+              to="/reviews"
+              className="inline-flex min-h-11 items-center font-semibold text-blue underline underline-offset-4 hover:text-navy"
+            >
+              Read customer reviews
+            </Link>
+          </div>
         </Reveal>
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {REVIEWS.slice(0, 3).map((review) => (
-            <Reveal key={review.id}>
-              <figure className="h-full rounded-md border-t-2 border-blue bg-surface p-6">
-                <blockquote className="leading-relaxed text-foreground">{review.quote}</blockquote>
-                <figcaption className="mt-4 text-sm font-semibold text-muted-foreground">
-                  {review.name} — {review.city}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        {homeReviews.length > 0 ? (
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {homeReviews.map((review) => (
+              <Reveal key={review.id}>
+                <figure className="h-full rounded-md border-t-2 border-blue bg-surface p-6">
+                  <blockquote className="leading-relaxed text-foreground">{review.quote}</blockquote>
+                  <figcaption className="mt-4 text-sm font-semibold text-muted-foreground">
+                    {review.name} — {review.city}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        ) : null}
 
         <h3 className="mt-12 text-lg font-bold text-navy">Recent work</h3>
         <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">

@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+const BASE_URL = "https://afterhoursplumbingandpump.com";
 
 const entries: { path: string; changefreq: string; priority: string }[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
@@ -13,6 +12,14 @@ const entries: { path: string; changefreq: string; priority: string }[] = [
   { path: "/service-areas", changefreq: "monthly", priority: "0.7" },
   { path: "/service-areas/hillsborough-nc", changefreq: "monthly", priority: "0.8" },
   { path: "/service-areas/durham-nc", changefreq: "monthly", priority: "0.8" },
+  { path: "/service-areas/chapel-hill-nc", changefreq: "monthly", priority: "0.8" },
+  { path: "/service-areas/mebane-nc", changefreq: "monthly", priority: "0.7" },
+  { path: "/service-areas/efland-nc", changefreq: "monthly", priority: "0.7" },
+  { path: "/service-areas/burlington-nc", changefreq: "monthly", priority: "0.7" },
+  { path: "/service-areas/cary-nc", changefreq: "monthly", priority: "0.7" },
+  { path: "/service-areas/morrisville-nc", changefreq: "monthly", priority: "0.7" },
+  { path: "/service-areas/raleigh-nc", changefreq: "monthly", priority: "0.7" },
+  { path: "/reviews", changefreq: "weekly", priority: "0.8" },
   { path: "/about", changefreq: "yearly", priority: "0.6" },
   { path: "/contact", changefreq: "yearly", priority: "0.7" },
 ];

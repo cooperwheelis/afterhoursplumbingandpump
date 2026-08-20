@@ -1,3 +1,4 @@
+import { OG_IMAGE, SITE_URL } from "@/data/site";
 import { createFileRoute } from "@tanstack/react-router";
 import heroPhoto from "@/assets/work-water-heater.webp";
 import supportPhoto from "@/assets/work-capture.webp";
@@ -19,10 +20,12 @@ export const Route = createFileRoute("/services/water-heaters")({
         property: "og:description",
         content: "Tank and tankless water heater repair, replacement and installation. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/services/water-heaters" },
+      { property: "og:url", content: SITE_URL + "/services/water-heaters" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/services/water-heaters" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/services/water-heaters" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -39,9 +42,9 @@ export const Route = createFileRoute("/services/water-heaters")({
             {
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-                { "@type": "ListItem", position: 2, name: "Services", item: "/services" },
-                { "@type": "ListItem", position: 3, name: "Water Heaters", item: "/services/water-heaters" },
+                { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+                { "@type": "ListItem", position: 2, name: "Services", item: SITE_URL + "/services" },
+                { "@type": "ListItem", position: 3, name: "Water Heaters", item: SITE_URL + "/services/water-heaters" },
               ],
             },
           ],

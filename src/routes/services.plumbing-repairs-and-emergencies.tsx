@@ -1,3 +1,4 @@
+import { OG_IMAGE, SITE_URL } from "@/data/site";
 import { createFileRoute } from "@tanstack/react-router";
 import heroPhoto from "@/assets/work-repair.webp";
 import supportPhoto from "@/assets/work-plumbing-detail.webp";
@@ -19,10 +20,12 @@ export const Route = createFileRoute("/services/plumbing-repairs-and-emergencies
         property: "og:description",
         content: "24/7 emergency plumbing and everyday repairs for homes and businesses. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/services/plumbing-repairs-and-emergencies" },
+      { property: "og:url", content: SITE_URL + "/services/plumbing-repairs-and-emergencies" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/services/plumbing-repairs-and-emergencies" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/services/plumbing-repairs-and-emergencies" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -39,13 +42,13 @@ export const Route = createFileRoute("/services/plumbing-repairs-and-emergencies
             {
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-                { "@type": "ListItem", position: 2, name: "Services", item: "/services" },
+                { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+                { "@type": "ListItem", position: 2, name: "Services", item: SITE_URL + "/services" },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Plumbing Repairs & Emergencies",
-                  item: "/services/plumbing-repairs-and-emergencies",
+                  item: SITE_URL + "/services/plumbing-repairs-and-emergencies",
                 },
               ],
             },

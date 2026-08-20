@@ -8,7 +8,17 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { Section } from "@/components/site/Section";
 import { ServiceAreaNote } from "@/components/site/ServiceAreaNote";
-import { EMAIL, MAILING_ADDRESS, MAPS_LINK, PHONE_DISPLAY, PHONE_HREF } from "@/data/site";
+import {
+  CITY_STATE_ZIP,
+  EMAIL,
+  MAILING_ADDRESS,
+  MAPS_LINK,
+  OG_IMAGE,
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  SITE_URL,
+  STREET_ADDRESS,
+} from "@/data/site";
 
 const title = "Contact After Hours Plumbing | (919) 732-7588";
 
@@ -26,10 +36,12 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Reach After Hours Plumbing and Pump Service any hour, any day. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: SITE_URL + "/contact" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/contact" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -37,8 +49,8 @@ export const Route = createFileRoute("/contact")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: SITE_URL + "/contact" },
           ],
         }),
       },
@@ -98,9 +110,13 @@ function ContactPage() {
               <div className="flex items-start gap-3 py-5">
                 <MapPin aria-hidden="true" className="mt-1 size-5 shrink-0 text-amber" />
                 <div>
-                  <dt className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">Mailing address</dt>
+                  <dt className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">Address</dt>
                   <dd className="mt-1 text-foreground">
-                    {MAILING_ADDRESS}
+                    {STREET_ADDRESS}
+                    <br />
+                    {CITY_STATE_ZIP}
+                    <br />
+                    <span className="text-sm text-muted-foreground">Mail: {MAILING_ADDRESS}</span>
                     <br />
                     <a
                       href={MAPS_LINK}

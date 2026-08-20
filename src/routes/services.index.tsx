@@ -1,3 +1,4 @@
+import { OG_IMAGE, SITE_URL } from "@/data/site";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import repairPhoto from "@/assets/work-repair.webp";
@@ -26,10 +27,12 @@ export const Route = createFileRoute("/services/")({
         property: "og:description",
         content: "Repairs, water heaters, well pumps and water quality systems. Available 24/7. Call (919) 732-7588.",
       },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: SITE_URL + "/services" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/services" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -37,8 +40,8 @@ export const Route = createFileRoute("/services/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Services", item: "/services" },
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+            { "@type": "ListItem", position: 2, name: "Services", item: SITE_URL + "/services" },
           ],
         }),
       },

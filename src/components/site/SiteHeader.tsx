@@ -109,6 +109,9 @@ export function SiteHeader() {
           <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
             <DesktopDropdown label="Services" items={SERVICE_LINKS} />
             <DesktopDropdown label="Service Areas" items={AREA_LINKS} />
+            <Link to="/reviews" className={navLinkClass} activeProps={{ className: cn(navLinkClass, "text-blue underline underline-offset-8") }}>
+              Reviews
+            </Link>
             <Link to="/about" className={navLinkClass} activeProps={{ className: cn(navLinkClass, "text-blue underline underline-offset-8") }}>
               About
             </Link>
@@ -150,6 +153,13 @@ export function SiteHeader() {
             <nav aria-label="Mobile" className="container-page py-4">
               <MobileGroup title="Services" items={SERVICE_LINKS} onNavigate={() => setMobileOpen(false)} />
               <MobileGroup title="Service Areas" items={AREA_LINKS} onNavigate={() => setMobileOpen(false)} />
+              <Link
+                to="/reviews"
+                onClick={() => setMobileOpen(false)}
+                className="flex min-h-12 items-center border-b border-border font-semibold text-navy"
+              >
+                Reviews
+              </Link>
               <Link
                 to="/about"
                 onClick={() => setMobileOpen(false)}

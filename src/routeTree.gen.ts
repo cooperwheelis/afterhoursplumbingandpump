@@ -12,10 +12,18 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas.index'
+import { Route as ServiceAreasBurlingtonNcRouteImport } from './routes/service-areas.burlington-nc'
+import { Route as ServiceAreasCaryNcRouteImport } from './routes/service-areas.cary-nc'
+import { Route as ServiceAreasChapelHillNcRouteImport } from './routes/service-areas.chapel-hill-nc'
 import { Route as ServiceAreasDurhamNcRouteImport } from './routes/service-areas.durham-nc'
+import { Route as ServiceAreasEflandNcRouteImport } from './routes/service-areas.efland-nc'
 import { Route as ServiceAreasHillsboroughNcRouteImport } from './routes/service-areas.hillsborough-nc'
+import { Route as ServiceAreasMebaneNcRouteImport } from './routes/service-areas.mebane-nc'
+import { Route as ServiceAreasMorrisvilleNcRouteImport } from './routes/service-areas.morrisville-nc'
+import { Route as ServiceAreasRaleighNcRouteImport } from './routes/service-areas.raleigh-nc'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesPlumbingRepairsAndEmergenciesRouteImport } from './routes/services.plumbing-repairs-and-emergencies'
 import { Route as ServicesWaterHeatersRouteImport } from './routes/services.water-heaters'
@@ -36,6 +44,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -46,9 +59,31 @@ const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
   path: '/service-areas/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceAreasBurlingtonNcRoute =
+  ServiceAreasBurlingtonNcRouteImport.update({
+    id: '/service-areas/burlington-nc',
+    path: '/service-areas/burlington-nc',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServiceAreasCaryNcRoute = ServiceAreasCaryNcRouteImport.update({
+  id: '/service-areas/cary-nc',
+  path: '/service-areas/cary-nc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasChapelHillNcRoute =
+  ServiceAreasChapelHillNcRouteImport.update({
+    id: '/service-areas/chapel-hill-nc',
+    path: '/service-areas/chapel-hill-nc',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServiceAreasDurhamNcRoute = ServiceAreasDurhamNcRouteImport.update({
   id: '/service-areas/durham-nc',
   path: '/service-areas/durham-nc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasEflandNcRoute = ServiceAreasEflandNcRouteImport.update({
+  id: '/service-areas/efland-nc',
+  path: '/service-areas/efland-nc',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceAreasHillsboroughNcRoute =
@@ -57,6 +92,22 @@ const ServiceAreasHillsboroughNcRoute =
     path: '/service-areas/hillsborough-nc',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServiceAreasMebaneNcRoute = ServiceAreasMebaneNcRouteImport.update({
+  id: '/service-areas/mebane-nc',
+  path: '/service-areas/mebane-nc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasMorrisvilleNcRoute =
+  ServiceAreasMorrisvilleNcRouteImport.update({
+    id: '/service-areas/morrisville-nc',
+    path: '/service-areas/morrisville-nc',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServiceAreasRaleighNcRoute = ServiceAreasRaleighNcRouteImport.update({
+  id: '/service-areas/raleigh-nc',
+  path: '/service-areas/raleigh-nc',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -84,9 +135,17 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/reviews': typeof ReviewsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/service-areas/burlington-nc': typeof ServiceAreasBurlingtonNcRoute
+  '/service-areas/cary-nc': typeof ServiceAreasCaryNcRoute
+  '/service-areas/chapel-hill-nc': typeof ServiceAreasChapelHillNcRoute
   '/service-areas/durham-nc': typeof ServiceAreasDurhamNcRoute
+  '/service-areas/efland-nc': typeof ServiceAreasEflandNcRoute
   '/service-areas/hillsborough-nc': typeof ServiceAreasHillsboroughNcRoute
+  '/service-areas/mebane-nc': typeof ServiceAreasMebaneNcRoute
+  '/service-areas/morrisville-nc': typeof ServiceAreasMorrisvilleNcRoute
+  '/service-areas/raleigh-nc': typeof ServiceAreasRaleighNcRoute
   '/services/plumbing-repairs-and-emergencies': typeof ServicesPlumbingRepairsAndEmergenciesRoute
   '/services/water-heaters': typeof ServicesWaterHeatersRoute
   '/services/well-pumps-and-water-quality': typeof ServicesWellPumpsAndWaterQualityRoute
@@ -97,9 +156,17 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/reviews': typeof ReviewsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/service-areas/burlington-nc': typeof ServiceAreasBurlingtonNcRoute
+  '/service-areas/cary-nc': typeof ServiceAreasCaryNcRoute
+  '/service-areas/chapel-hill-nc': typeof ServiceAreasChapelHillNcRoute
   '/service-areas/durham-nc': typeof ServiceAreasDurhamNcRoute
+  '/service-areas/efland-nc': typeof ServiceAreasEflandNcRoute
   '/service-areas/hillsborough-nc': typeof ServiceAreasHillsboroughNcRoute
+  '/service-areas/mebane-nc': typeof ServiceAreasMebaneNcRoute
+  '/service-areas/morrisville-nc': typeof ServiceAreasMorrisvilleNcRoute
+  '/service-areas/raleigh-nc': typeof ServiceAreasRaleighNcRoute
   '/services/plumbing-repairs-and-emergencies': typeof ServicesPlumbingRepairsAndEmergenciesRoute
   '/services/water-heaters': typeof ServicesWaterHeatersRoute
   '/services/well-pumps-and-water-quality': typeof ServicesWellPumpsAndWaterQualityRoute
@@ -111,9 +178,17 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/reviews': typeof ReviewsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/service-areas/burlington-nc': typeof ServiceAreasBurlingtonNcRoute
+  '/service-areas/cary-nc': typeof ServiceAreasCaryNcRoute
+  '/service-areas/chapel-hill-nc': typeof ServiceAreasChapelHillNcRoute
   '/service-areas/durham-nc': typeof ServiceAreasDurhamNcRoute
+  '/service-areas/efland-nc': typeof ServiceAreasEflandNcRoute
   '/service-areas/hillsborough-nc': typeof ServiceAreasHillsboroughNcRoute
+  '/service-areas/mebane-nc': typeof ServiceAreasMebaneNcRoute
+  '/service-areas/morrisville-nc': typeof ServiceAreasMorrisvilleNcRoute
+  '/service-areas/raleigh-nc': typeof ServiceAreasRaleighNcRoute
   '/services/plumbing-repairs-and-emergencies': typeof ServicesPlumbingRepairsAndEmergenciesRoute
   '/services/water-heaters': typeof ServicesWaterHeatersRoute
   '/services/well-pumps-and-water-quality': typeof ServicesWellPumpsAndWaterQualityRoute
@@ -126,9 +201,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/reviews'
     | '/sitemap.xml'
+    | '/service-areas/burlington-nc'
+    | '/service-areas/cary-nc'
+    | '/service-areas/chapel-hill-nc'
     | '/service-areas/durham-nc'
+    | '/service-areas/efland-nc'
     | '/service-areas/hillsborough-nc'
+    | '/service-areas/mebane-nc'
+    | '/service-areas/morrisville-nc'
+    | '/service-areas/raleigh-nc'
     | '/services/plumbing-repairs-and-emergencies'
     | '/services/water-heaters'
     | '/services/well-pumps-and-water-quality'
@@ -139,9 +222,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/reviews'
     | '/sitemap.xml'
+    | '/service-areas/burlington-nc'
+    | '/service-areas/cary-nc'
+    | '/service-areas/chapel-hill-nc'
     | '/service-areas/durham-nc'
+    | '/service-areas/efland-nc'
     | '/service-areas/hillsborough-nc'
+    | '/service-areas/mebane-nc'
+    | '/service-areas/morrisville-nc'
+    | '/service-areas/raleigh-nc'
     | '/services/plumbing-repairs-and-emergencies'
     | '/services/water-heaters'
     | '/services/well-pumps-and-water-quality'
@@ -152,9 +243,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/reviews'
     | '/sitemap.xml'
+    | '/service-areas/burlington-nc'
+    | '/service-areas/cary-nc'
+    | '/service-areas/chapel-hill-nc'
     | '/service-areas/durham-nc'
+    | '/service-areas/efland-nc'
     | '/service-areas/hillsborough-nc'
+    | '/service-areas/mebane-nc'
+    | '/service-areas/morrisville-nc'
+    | '/service-areas/raleigh-nc'
     | '/services/plumbing-repairs-and-emergencies'
     | '/services/water-heaters'
     | '/services/well-pumps-and-water-quality'
@@ -166,9 +265,17 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  ReviewsRoute: typeof ReviewsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ServiceAreasBurlingtonNcRoute: typeof ServiceAreasBurlingtonNcRoute
+  ServiceAreasCaryNcRoute: typeof ServiceAreasCaryNcRoute
+  ServiceAreasChapelHillNcRoute: typeof ServiceAreasChapelHillNcRoute
   ServiceAreasDurhamNcRoute: typeof ServiceAreasDurhamNcRoute
+  ServiceAreasEflandNcRoute: typeof ServiceAreasEflandNcRoute
   ServiceAreasHillsboroughNcRoute: typeof ServiceAreasHillsboroughNcRoute
+  ServiceAreasMebaneNcRoute: typeof ServiceAreasMebaneNcRoute
+  ServiceAreasMorrisvilleNcRoute: typeof ServiceAreasMorrisvilleNcRoute
+  ServiceAreasRaleighNcRoute: typeof ServiceAreasRaleighNcRoute
   ServicesPlumbingRepairsAndEmergenciesRoute: typeof ServicesPlumbingRepairsAndEmergenciesRoute
   ServicesWaterHeatersRoute: typeof ServicesWaterHeatersRoute
   ServicesWellPumpsAndWaterQualityRoute: typeof ServicesWellPumpsAndWaterQualityRoute
@@ -199,6 +306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -213,6 +327,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiceAreasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-areas/burlington-nc': {
+      id: '/service-areas/burlington-nc'
+      path: '/service-areas/burlington-nc'
+      fullPath: '/service-areas/burlington-nc'
+      preLoaderRoute: typeof ServiceAreasBurlingtonNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/cary-nc': {
+      id: '/service-areas/cary-nc'
+      path: '/service-areas/cary-nc'
+      fullPath: '/service-areas/cary-nc'
+      preLoaderRoute: typeof ServiceAreasCaryNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/chapel-hill-nc': {
+      id: '/service-areas/chapel-hill-nc'
+      path: '/service-areas/chapel-hill-nc'
+      fullPath: '/service-areas/chapel-hill-nc'
+      preLoaderRoute: typeof ServiceAreasChapelHillNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/service-areas/durham-nc': {
       id: '/service-areas/durham-nc'
       path: '/service-areas/durham-nc'
@@ -220,11 +355,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiceAreasDurhamNcRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-areas/efland-nc': {
+      id: '/service-areas/efland-nc'
+      path: '/service-areas/efland-nc'
+      fullPath: '/service-areas/efland-nc'
+      preLoaderRoute: typeof ServiceAreasEflandNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/service-areas/hillsborough-nc': {
       id: '/service-areas/hillsborough-nc'
       path: '/service-areas/hillsborough-nc'
       fullPath: '/service-areas/hillsborough-nc'
       preLoaderRoute: typeof ServiceAreasHillsboroughNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/mebane-nc': {
+      id: '/service-areas/mebane-nc'
+      path: '/service-areas/mebane-nc'
+      fullPath: '/service-areas/mebane-nc'
+      preLoaderRoute: typeof ServiceAreasMebaneNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/morrisville-nc': {
+      id: '/service-areas/morrisville-nc'
+      path: '/service-areas/morrisville-nc'
+      fullPath: '/service-areas/morrisville-nc'
+      preLoaderRoute: typeof ServiceAreasMorrisvilleNcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/raleigh-nc': {
+      id: '/service-areas/raleigh-nc'
+      path: '/service-areas/raleigh-nc'
+      fullPath: '/service-areas/raleigh-nc'
+      preLoaderRoute: typeof ServiceAreasRaleighNcRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/': {
@@ -262,9 +425,17 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  ReviewsRoute: ReviewsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ServiceAreasBurlingtonNcRoute: ServiceAreasBurlingtonNcRoute,
+  ServiceAreasCaryNcRoute: ServiceAreasCaryNcRoute,
+  ServiceAreasChapelHillNcRoute: ServiceAreasChapelHillNcRoute,
   ServiceAreasDurhamNcRoute: ServiceAreasDurhamNcRoute,
+  ServiceAreasEflandNcRoute: ServiceAreasEflandNcRoute,
   ServiceAreasHillsboroughNcRoute: ServiceAreasHillsboroughNcRoute,
+  ServiceAreasMebaneNcRoute: ServiceAreasMebaneNcRoute,
+  ServiceAreasMorrisvilleNcRoute: ServiceAreasMorrisvilleNcRoute,
+  ServiceAreasRaleighNcRoute: ServiceAreasRaleighNcRoute,
   ServicesPlumbingRepairsAndEmergenciesRoute:
     ServicesPlumbingRepairsAndEmergenciesRoute,
   ServicesWaterHeatersRoute: ServicesWaterHeatersRoute,
