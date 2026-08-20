@@ -1,26 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import { Droplets } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoDark from "@/assets/logo.png";
+import logoLight from "@/assets/logo-light.png";
 
 export function Logo({ tone = "navy", className }: { tone?: "navy" | "light"; className?: string }) {
-  const color = tone === "light" ? "text-navy-foreground" : "text-navy";
   return (
     <Link
       to="/"
-      className={cn("flex min-w-0 items-center gap-2.5", color, className)}
+      className={cn("flex min-w-0 items-center", className)}
       aria-label="After Hours Plumbing and Pump Service — home"
     >
-      <span className="grid size-9 shrink-0 place-items-center bg-blue text-navy-foreground">
-        <Droplets aria-hidden="true" className="size-5" />
-      </span>
-      <span className="min-w-0 leading-tight">
-        <span className="block font-display text-[15px] font-extrabold tracking-tight uppercase sm:text-base">
-          After Hours
-        </span>
-        <span className={cn("block text-[10px] font-medium tracking-[0.14em] uppercase", tone === "light" ? "text-navy-foreground/70" : "text-muted-foreground")}>
-          Plumbing &amp; Pump Service
-        </span>
-      </span>
+      <img
+        src={tone === "light" ? logoLight : logoDark}
+        alt="After Hours Plumbing and Pump Service"
+        className="h-11 w-auto sm:h-12 lg:h-14"
+        width={1050}
+        height={420}
+      />
     </Link>
   );
 }
