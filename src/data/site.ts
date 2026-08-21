@@ -38,16 +38,16 @@ export const AREA_LINKS = [
   { label: "Raleigh", to: "/service-areas/raleigh-nc" },
 ] as const;
 
-export const CITIES: { name: string; primary: boolean; to: string }[] = [
-  { name: "Hillsborough", primary: true, to: "/service-areas/hillsborough-nc" },
-  { name: "Durham", primary: true, to: "/service-areas/durham-nc" },
-  { name: "Chapel Hill", primary: false, to: "/service-areas/chapel-hill-nc" },
-  { name: "Mebane", primary: false, to: "/service-areas/mebane-nc" },
-  { name: "Efland", primary: false, to: "/service-areas/efland-nc" },
-  { name: "Burlington", primary: false, to: "/service-areas/burlington-nc" },
-  { name: "Cary", primary: false, to: "/service-areas/cary-nc" },
-  { name: "Morrisville", primary: false, to: "/service-areas/morrisville-nc" },
-  { name: "Raleigh", primary: false, to: "/service-areas/raleigh-nc" },
+export const CITIES: { name: string; to: string }[] = [
+  { name: "Hillsborough", to: "/service-areas/hillsborough-nc" },
+  { name: "Durham", to: "/service-areas/durham-nc" },
+  { name: "Chapel Hill", to: "/service-areas/chapel-hill-nc" },
+  { name: "Mebane", to: "/service-areas/mebane-nc" },
+  { name: "Efland", to: "/service-areas/efland-nc" },
+  { name: "Burlington", to: "/service-areas/burlington-nc" },
+  { name: "Cary", to: "/service-areas/cary-nc" },
+  { name: "Morrisville", to: "/service-areas/morrisville-nc" },
+  { name: "Raleigh", to: "/service-areas/raleigh-nc" },
 ];
 
 export const MAPS_LINK = "https://www.google.com/maps/place/Hillsborough,+NC+27278";
