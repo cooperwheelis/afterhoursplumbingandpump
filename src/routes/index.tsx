@@ -258,19 +258,12 @@ function Home() {
         <ul className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3">
           {CITIES.map((city) => (
             <li key={city.name} className="bg-surface">
-              {"to" in city && city.to ? (
-                <Link
-                  to={city.to}
-                  className="flex min-h-16 items-center justify-between gap-2 p-4 font-semibold text-navy hover:bg-muted hover:text-blue"
-                >
-                  {city.name}
-                  <span className="rounded-sm bg-amber px-2 py-0.5 text-[11px] font-bold tracking-wide text-amber-foreground uppercase">
-                    Primary
-                  </span>
-                </Link>
-              ) : (
-                <span className="flex min-h-16 items-center p-4 text-muted-foreground">{city.name}</span>
-              )}
+              <Link
+                to={city.to}
+                className="flex min-h-16 items-center p-4 font-semibold text-navy hover:bg-muted hover:text-blue"
+              >
+                {city.name}
+              </Link>
             </li>
           ))}
         </ul>
