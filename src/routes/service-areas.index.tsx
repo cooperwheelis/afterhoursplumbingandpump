@@ -64,8 +64,9 @@ function ServiceAreasPage() {
           />
         </Reveal>
 
-        <div className="mt-4 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {CITIES.map((city) => (
+        <h3 className="mt-10 text-sm font-bold tracking-[0.14em] text-muted-foreground uppercase">Primary markets</h3>
+        <div className="mt-4 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
+          {CITIES.filter((c) => c.primary).map((city) => (
             <Link
               key={city.name}
               to={city.to}
@@ -75,9 +76,7 @@ function ServiceAreasPage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 {city.name === "Hillsborough"
                   ? "Our home base. Older homes, well systems and small businesses downtown and out in the county."
-                  : city.name === "Durham"
-                    ? "Our second home market. City water, rental properties, restaurants and busy family homes."
-                    : "Local plumbing service for homeowners and businesses across the Triangle."}
+                  : "Our second home market. City water, rental properties, restaurants and busy family homes."}
               </p>
               <span className="mt-3 inline-block font-semibold text-blue underline underline-offset-4">
                 See {city.name} plumbing services
@@ -85,6 +84,22 @@ function ServiceAreasPage() {
             </Link>
           ))}
         </div>
+
+        <h3 className="mt-10 text-sm font-bold tracking-[0.14em] text-muted-foreground uppercase">
+          Also serving these towns
+        </h3>
+        <ul className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-4">
+          {CITIES.filter((c) => !c.primary).map((city) => (
+            <li key={city.name}>
+              <Link
+                to={city.to}
+                className="flex min-h-16 items-center bg-surface p-4 font-semibold text-foreground hover:bg-muted hover:text-blue"
+              >
+                {city.name}, NC
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         <p className="mt-6 max-w-2xl text-muted-foreground">
           Do not see your town? Call {PHONE_DISPLAY} and ask. If we cover your address, we will tell you on the phone.{" "}
